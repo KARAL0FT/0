@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orientation Redirect</title>
+  <script>
+    function redirectBasedOnOrientation() {
+      const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+      if (isLandscape) {
+        window.location.href = "landscape.html";
+      } else {
+        window.location.href = "portrait.html";
+      }
+    }
+
+    window.addEventListener('load', redirectBasedOnOrientation);
+    window.addEventListener('orientationchange', redirectBasedOnOrientation);
+  </script>
+</head>
+<body>
+  <p>Checking orientation...</p>
+</body>
+</html>
