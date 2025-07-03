@@ -45,7 +45,7 @@ body {
 
 .hero-text {
     position: absolute;
-    top: 100px;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Oswald', sans-serif;
@@ -66,42 +66,18 @@ body {
 
 .description-text {
     position: absolute;
-    top: 200px;
+    top: 250px;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 80%;
+    max-width: 70%;
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    line-height: 1.4;
+    line-height: 1.6;
     z-index: 999;
     text-align: center;
-}
-
-.center-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 998;
-    width: 400px;
-    height: auto;
-}
-
-.portrait-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    opacity: 0.9;
-    cursor: pointer;
-    transition: transform 0.6s ease;
-    display: block;
-}
-
-.portrait-image:hover {
-    transform: scale(1.15);
 }
 
 .main-content {
@@ -164,23 +140,14 @@ body {
 
 .white-bar {
     width: 100%;
-    height: 150px;
+    height: 100px;
     background-color: white;
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    gap: 20px;
     text-align: center;
-}
-
-.footer-logo {
-    max-height: 50px;
-    max-width: 150px;
-    object-fit: contain;
-    flex-shrink: 0;
 }
 
 .footer-text {
@@ -203,18 +170,14 @@ body {
     }
     
     .hero-text {
-        top: 80px;
+        top: 90px;
         font-size: 2.5rem;
     }
     
     .description-text {
-        top: 160px;
+        top: 180px;
         font-size: 1rem;
         max-width: 90%;
-    }
-    
-    .center-image {
-        width: 300px;
     }
     
     .main-content {
@@ -242,14 +205,8 @@ body {
     }
     
     .white-bar {
-        height: 120px;
+        height: 80px;
         padding: 15px;
-        gap: 15px;
-    }
-    
-    .footer-logo {
-        max-height: 40px;
-        max-width: 120px;
     }
     
     .footer-text {
