@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('a7f3-d2e9-b8c1-f5a6-b4c7/icons/color_main.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+.top-bar {
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    max-height: 60px;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+.hero-text {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.8s ease;
+    z-index: 999;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.hero-text:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.description-text {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    line-height: 1.4;
+    z-index: 999;
+    text-align: center;
+}
+
+.center-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 998;
+    width: 400px;
+    height: auto;
+}
+
+.portrait-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.portrait-image:hover {
+    transform: scale(1.15);
+}
+
+.main-content {
+    height: 220vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0;
+}
+
+.spacer {
+    height: 100vh;
+}
+
+.bottom-section {
+    min-height: 100vh;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bottom-section h2 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 80px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.platform-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.platform-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    padding: 30px 60px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.platform-btn:hover {
+    transform: scale(1.1);
+}
+
+.white-bar {
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    max-height: 50px;
+    max-width: 150px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.footer-text {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .top-bar {
+        height: 60px;
+    }
+    
+    .logo {
+        max-height: 40px;
+        max-width: 150px;
+    }
+    
+    .hero-text {
+        top: 80px;
+        font-size: 2.5rem;
+    }
+    
+    .description-text {
+        top: 160px;
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    
+    .center-image {
+        width: 300px;
+    }
+    
+    .main-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .bottom-section {
+        padding: 20px;
+    }
+    
+    .bottom-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+    
+    .platform-buttons {
+        gap: 30px;
+    }
+    
+    .platform-btn {
+        padding: 20px 40px;
+        font-size: 1.2rem;
+        width: 250px;
+    }
+    
+    .white-bar {
+        height: 120px;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .footer-logo {
+        max-height: 40px;
+        max-width: 120px;
+    }
+    
+    .footer-text {
+        font-size: 0.8rem;
+    }
+}
