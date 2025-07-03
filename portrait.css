@@ -163,52 +163,54 @@ body {
     .top-bar {
         height: 60px;
     }
-    
+
     .logo {
         max-height: 40px;
         max-width: 150px;
     }
-    
+
     .hero-text {
         top: 90px;
         font-size: 2.5rem;
     }
-    
+
     .description-text {
-        top: 180px;
-        font-size: 1rem;
-        max-width: 90%;
+        top: 220px; /* more spacing */
+        font-size: 1.1rem; /* slightly larger */
+        max-width: 95%; /* more width */
+        line-height: 2; /* more line spacing */
+        padding: 0 10px; /* side spacing */
     }
-    
+
     .main-content {
         padding-left: 15px;
         padding-right: 15px;
     }
-    
+
     .bottom-section {
         padding: 20px;
     }
-    
+
     .bottom-section h2 {
         font-size: 2.5rem;
         margin-bottom: 50px;
     }
-    
+
     .platform-buttons {
         gap: 30px;
     }
-    
+
     .platform-btn {
         padding: 20px 40px;
         font-size: 1.2rem;
         width: 250px;
     }
-    
+
     .white-bar {
         height: 80px;
         padding: 15px;
     }
-    
+
     .footer-text {
         font-size: 0.8rem;
     }
