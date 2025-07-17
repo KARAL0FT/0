@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,41 +41,13 @@
       pointer-events: none;
     }
 
-    .slideshow {
+    .video-background {
       position: fixed;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
-    }
-
-    .slide {
-      position: absolute;
-      width: 100%; height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0;
-      animation: fade 70s infinite;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .slide:nth-child(1) { animation-delay: 0s; }
-    .slide:nth-child(2) { animation-delay: 7s; }
-    .slide:nth-child(3) { animation-delay: 14s; }
-    .slide:nth-child(4) { animation-delay: 21s; }
-    .slide:nth-child(5) { animation-delay: 28s; }
-    .slide:nth-child(6) { animation-delay: 35s; }
-    .slide:nth-child(7) { animation-delay: 42s; }
-    .slide:nth-child(8) { animation-delay: 49s; }
-    .slide:nth-child(9) { animation-delay: 56s; }
-    .slide:nth-child(10) { animation-delay: 63s; }
-
-    @keyframes fade {
-      0% { opacity: 0; }
-      7% { opacity: 1; }
-      20% { opacity: 1; }
-      27% { opacity: 0; }
-      100% { opacity: 0; }
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
 
     .top-text {
@@ -107,7 +78,7 @@
       position: fixed;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 180px;
+      width: 120px; /* Smaller size */
       z-index: 10;
     }
 
@@ -149,7 +120,7 @@
 
     @media screen and (orientation: portrait) {
       .orientation-warning { display: block; }
-      .slideshow, .top-text, .center-logo, #display-number { display: none; }
+      .video-background, .top-text, .center-logo, #display-number { display: none; }
     }
   </style>
 </head>
@@ -165,19 +136,10 @@
       <p>Please rotate your device to <strong>landscape</strong> mode.</p>
     </div>
 
-    <div class="slideshow">
-      <!-- 10 background images -->
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/1.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/2.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/3.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/4.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/5.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/6.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/7.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/8.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/9.png')"></div>
-      <div class="slide" style="background-image: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/backgrounds/10.png')"></div>
-    </div>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop playsinline>
+      <source src="https://ia800903.us.archive.org/24/items/bgkaraoke_final_retry/bgkaraoke_final_retry.mp4" type="video/mp4">
+    </video>
 
     <div class="top-text" id="topText">SELECT A SONG</div>
     <img class="center-logo" src="https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/icons/icon_roundcorner.png" alt="Logo" />
@@ -248,7 +210,6 @@
             topText.textContent = info.song.toUpperCase();
             const serverURL = `https://karal0ft.github.io/${info.server}/`;
             console.log("✅ BASE SERVER URL:", serverURL);
-            // You can now load music/lyrics using serverURL
           } else {
             topText.textContent = "SONG NOT FOUND";
           }
