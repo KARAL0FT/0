@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>App Releasing Soon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: black;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
 
+    /* Boot Screen */
+    #boot-screen {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #boot-screen img {
+      width: 250px;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+
+    /* Main Screen */
+    #main-screen {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/icons/color_main.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .message {
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 5px #000;
+      text-align: center;
+      z-index: 5;
+    }
+
+    .orientation-warning {
+      display: none;
+      position: fixed;
+      z-index: 10001;
+      background: #000000e0;
+      color: white;
+      width: 100vw;
+      height: 100vh;
+      font-size: 1.5rem;
+      text-align: center;
+      padding-top: 40vh;
+    }
+
+    @media screen and (orientation: portrait) {
+      .orientation-warning {
+        display: block;
+      }
+      #main-screen {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Boot Screen -->
+  <div id="boot-screen">
+    <img src="https://karal0ft.github.io/0/a7f3-d2e9-b8c1-f5a6-b4c7/icons/logo_main.png" alt="Boot Logo">
+  </div>
+
+  <!-- Orientation Warning -->
+  <div class="orientation-warning">
+    <p>Please rotate your device to <strong>landscape</strong> mode.</p>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-screen">
+    <div class="message">APP RELEASING SOON!</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("boot-screen").classList.add("fade-out");
+      setTimeout(() => {
+        document.getElementById("boot-screen").style.display = "none";
+        document.getElementById("main-screen").style.display = "flex";
+      }, 1000);
+    }, 5000); // Boot duration: 5 seconds
+  </script>
+</body>
+</html>
